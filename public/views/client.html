@@ -1,0 +1,43 @@
+<div ng-controller="clientController">
+	<div align="center"> 
+	   <h1 style="text-decoration: underline; margin-bottom:170px"> Interrupted App for Connected Clients </h1> 
+	</div>
+	<div class="active_bcn" align="center">
+	   <b><font color="green" size="6">Active BconID: {{showBcon}} <span id="activeBcon"></span></font> </b> 
+	</div>
+	<div>
+	    <h3>FIRST GROUP</h3>
+		<table class="table left">
+		     <thead class="thead-inverse">
+		     	<tr>
+					<th>USER NAME</th>
+					<th>SCORE</th>
+					<th>DEVICE ID</th>
+			    </tr>
+		     </thead>
+		     <tr ng-repeat="grp1Data in filterGrp1Data">
+		     	<td> {{grp1Data.cookie_val}} </td>
+		     	<td> {{grp1Data.click_cnt}} </td>
+		     	<td> {{grp1Data.bcon_id}} </td>
+		     </tr>
+		</table>
+		<h3 id="heading2" align="right">SECOND GROUP</h3>
+		<table class="table right">
+			<thead class="thead-inverse">
+		     	<tr>
+					<th>USER NAME</th>
+					<th>SCORE</th>
+					<th>DEVICE ID</th>
+			    </tr>
+		     </thead>
+		     <tr ng-repeat="grp2Data in filterGrp2Data">
+		     	<td> {{grp2Data.cookie_val}} </td>
+		     	<td> {{grp2Data.click_cnt}} </td>
+		     	<td> {{grp2Data.bcon_id}} </td>
+		     </tr>
+		</table>
+	</div>
+	<div class="btndiv">
+	   <button type="button" class="btn btn-primary btn-lg" ng-click="updateClicks()"> Start Play </button>
+	</div>
+</div>
